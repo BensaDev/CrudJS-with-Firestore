@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Crud JS</title>
+  <link href="style.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <div id="add-form" class="form-content">
+      <h2> Add new product </h2>
+      <form id="my-form" class="form-items" autocomplete="off">
+        <input type="text" id="name" name="name"      class="form-input" placeholder="Product Name">
+        <input type="text" id="category" name="category"  class="form-input" placeholder="Category">
+        <input type="text" id="quantity" name="quantity"  class="form-input" placeholder="Quantity">
+        <input type="button" value="Submit" class="btn add-btn">
+      </form>
+    </div>
+    <div id="edit-form" class="form-content hide">
+      <h2> Edit product</h2>
+      <form id="my-form" class="form-items" autocomplete="off">
+        <input type="text" id="nameE" name="name"      class="form-input" placeholder="Product Name">
+        <input type="text" id="categoryE" name="category"  class="form-input" placeholder="Category">
+        <input type="text" id="quantityE" name="quantity"  class="form-input" placeholder="Quantity">
+        <input type="button" value="Submit" class="btn edit-btn">
+      </form>
+    </div>
+    <div class="table-content">
+      <h2> List of Products </h2>
+      <table class="my-table">
+        <tr>
+          <th>Name</th>
+          <th>Category</th>
+          <th>Quantity</th>
+          <th class="th">Actions</th>                          
+        </tr>
+      </table>
+    </div>  
+  </div>
+  <!-- Sweet Alert -->
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- Api firebase with config -->
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+  <script>
+  var firebaseConfig = 
+  {
+    apiKey: "AIzaSyCtg1OhKnq4TRf02tnmLLIm-9TNvB2Si0w",
+    authDomain: "crud-js-2c2b8.firebaseapp.com",
+    projectId: "crud-js-2c2b8",
+    storageBucket: "crud-js-2c2b8.appspot.com",
+    messagingSenderId: "339608855046",
+    appId: "1:339608855046:web:dd5671163bf3a93a661987"
+  };
+   // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  const dbRef = firebase.firestore();
+  </script>
+  <script src="app.js"></script>
+</body>
+</html>
